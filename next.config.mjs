@@ -1,23 +1,15 @@
 /** @type {import('next').NextConfig} */
-const basePath = process.env.NODE_ENV === 'production' ? '/terminal-folio' : ''
-
 const nextConfig = {
   output: 'export',
-  basePath,
-  assetPrefix: `${basePath}/`,
+  basePath: process.env.NODE_ENV === 'production' ? '/terminal-folio' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/terminal-folio/' : '',
 
   // Image optimization and paths
   images: {
     unoptimized: true,
     domains: ['mikeisfree.github.io'],
-    path: `${basePath}/images`,
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'mikeisfree.github.io',
-        pathname: '/terminal-folio/**',
-      },
-    ],
+    loader: 'default',
+    path: process.env.NODE_ENV === 'production' ? '/terminal-folio' : '',
   },
 
   // Development configurations
@@ -35,10 +27,7 @@ const nextConfig = {
 
   // Runtime configuration for asset paths
   publicRuntimeConfig: {
-    basePath,
-    imagesPath: `${basePath}/images`,
-    videosPath: basePath,
-    soundsPath: `${basePath}/sounds`,
+    basePath: process.env.NODE_ENV === 'production' ? '/terminal-folio' : '',
   }
 }
 
