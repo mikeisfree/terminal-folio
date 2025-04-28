@@ -1,9 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  //comment out for developmnet
-  // output: 'export',
-  // basePath: '/terminal-neon-v2',
-  // assetPrefix: '/terminal-neon-v2/',
+  output: 'export',
+  basePath: '/terminal-folio',
+  assetPrefix: '/terminal-folio/',
   eslint: {
     ignoreDuringBuilds: true,
   },
