@@ -7,7 +7,7 @@ const nextConfig = {
   // Image optimization and paths
   images: {
     unoptimized: true,
-    domains: ['mikeisfree.github.io'],
+    domains: ['twistedtransistor.is-a.dev'],
     loader: 'default',
     path: process.env.NODE_ENV === 'production' ? '/terminal-folio' : '',
   },
