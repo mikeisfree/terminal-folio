@@ -6,10 +6,9 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
-// Get runtime config and environment variables
+// Get runtime config for paths
 const { publicRuntimeConfig } = getConfig() || { publicRuntimeConfig: {} }
-const isDev = process.env.NODE_ENV === 'development'
-const basePath = isDev ? '' : (process.env.NEXT_PUBLIC_BASE_PATH || publicRuntimeConfig?.basePath || '/terminal-folio')
+const basePath = publicRuntimeConfig?.basePath || ''
 
 // Helper function to clean and construct asset paths
 function createAssetPath(path: string, prefix?: string) {
