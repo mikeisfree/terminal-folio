@@ -1,5 +1,6 @@
 import { asciiArt } from "./ascii-art";
 import { updateUserAccessLevel, getUserInputHistory } from "./database-manager";
+import { getImagePath, getVideoPath, getSoundPath } from "./utils";
 
 // Event handler functions
 export function triggerEvent(
@@ -46,7 +47,8 @@ export function triggerEvent(
 function handlePlayAudio(params: string, app: any): void {
   // In a browser environment, we can play audio using the Web Audio API
   try {
-    const audio = new Audio("sounds/beep.mp3");
+    const soundFile = params || "beep.mp3";
+    const audio = new Audio(getSoundPath(soundFile));
     audio.play();
     app.addToLog("system", "🔊 Playing audio sequence...");
   } catch (error) {
@@ -62,15 +64,15 @@ function handlePlayAudio(params: string, app: any): void {
 
 function handlePrintImage(params: string, app: any): void {
   app.addToLog("system", "Rendering image...");
-  const imagePath = `/images/${params || "default.png"}`;
+  const imagePath = getImagePath(params || "default.png");
   const imageHtml = `<div><img src="${imagePath}" alt="Terminal Image" class="terminal-image" /></div>`;
   app.addToLog("system", imageHtml, true, null); // Pass null for componentName
 }
 
 function handlePlayVideo(params: string, app: any): void {
   app.addToLog("system", "Loading video...");
-  // Use params as the video source if provided, otherwise default (e.g., default.mp4)
-  const videoPath = `/${params}`;
+  // Use params as the video source if provided, otherwise default to a fallback
+  const videoPath = getVideoPath(params || "loader.mp4");
   // Construct video HTML with controls and a class, basic width/height
   const videoHtml = `<div><video src="${videoPath}" controls autoplay loop class="terminal-video" width="50%"></video></div>`;
   app.addToLog("system", videoHtml, true, null); // Add to log as HTML
