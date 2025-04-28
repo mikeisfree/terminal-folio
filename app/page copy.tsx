@@ -1,5 +1,5 @@
 // '"use client";
-
+//
 // import { useEffect, useState } from "react";
 // import { SplitTerminal } from "@/components/split-terminal";
 // import { ThemeProvider } from "@/components/theme-provider";
@@ -92,4 +92,3 @@
 //     </ThemeProvider>
 //   );
 // }
-'
