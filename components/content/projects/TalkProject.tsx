@@ -178,7 +178,7 @@ export function TalkProject() {
 
         <div className="w-full  lg:w-1/2 space-y-8">
           <Image
-            src="@/images/talk.jpg"
+            src="/terminal-folio/images/talk.jpg"
             alt="TALK Project Screenshot"
             width={600}
             height={400}
