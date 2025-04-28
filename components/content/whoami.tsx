@@ -25,7 +25,7 @@ export const WhoAmI: React.FC = () => {
           <div className={styles.photoSection}>
             <div className={styles.avatar}>
               <Image
-                src="/terminal-folio/images/avatar.png"
+                src="/images/avatar.png"
                 alt="Avatar"
                 width={200}
                 height={200}
