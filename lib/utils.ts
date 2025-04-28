@@ -16,8 +16,11 @@ function createAssetPath(path: string, prefix?: string) {
   // Return external URLs as-is
   if (path.startsWith('http')) return path
   
-  // Clean the path by removing leading slash
-  const cleanPath = path.replace(/^\//, '')
+  // Clean the path by removing leading slash and encode special characters
+  const cleanPath = path.replace(/^\//, '').split('/').map(part => 
+    // Don't encode slashes in the path
+    encodeURIComponent(part)
+  ).join('/')
   
   // Construct the full path
   const parts = [basePath]

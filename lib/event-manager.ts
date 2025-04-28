@@ -47,10 +47,20 @@ export function triggerEvent(
 function handlePlayAudio(params: string, app: any): void {
   // In a browser environment, we can play audio using the Web Audio API
   try {
-    const soundFile = params || "beep.mp3";
+    // If params is a message (contains spaces or special chars), use error.wav
+    const soundFile = (params && (params.includes(' ') || /[^a-zA-Z0-9._-]/.test(params))) 
+      ? "error.wav"
+      : (params || "beep.mp3");
+      
     const audio = new Audio(getSoundPath(soundFile));
     audio.play();
-    app.addToLog("system", "🔊 Playing audio sequence...");
+    
+    // If it was an error message, also log it
+    if (soundFile === "error.wav") {
+      app.addToLog("error", params);
+    } else {
+      app.addToLog("system", "🔊 Playing audio sequence...");
+    }
   } catch (error) {
     console.error("Error playing audio:", error);
     app.addToLog("error", "Error playing audio");

@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import styles from './whoami.module.css';
 import { MagicCard } from '../magicui/magic-card';
 
@@ -23,7 +24,13 @@ export const WhoAmI: React.FC = () => {
         <div className={styles.cardBody}>
           <div className={styles.photoSection}>
             <div className={styles.avatar}>
-              <img src="./../../images/avatar.png" alt="Avatar" className={styles.avatarImage} />
+              <Image
+                src="/images/avatar.png"
+                alt="Avatar"
+                width={200}
+                height={200}
+                className={styles.avatarImage}
+              />
             </div>
           </div>
           <div className={styles.infoSection}>
