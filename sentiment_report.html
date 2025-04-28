@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yesterday's News Sentiment Report</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      line-height: 1.6;
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    h1,
+    h2 {
+      color: #444;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 5px;
+    }
+
+    .container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .score {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #0056b3;
+    }
+
+    .synopsis {
+      margin-top: 10px;
+      font-style: italic;
+      color: #555;
+    }
+
+    .stats {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .stats div {
+      background-color: #e9ecef;
+      padding: 10px;
+      border-radius: 4px;
+    }
+
+    .headlines ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .headlines li {
+      background-color: #f8f9fa;
+      margin-bottom: 8px;
+      padding: 10px;
+      border-radius: 4px;
+      border-left: 3px solid #007bff;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 20px auto;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+
+    pre {
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      background-color: #eee;
+      padding: 10px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Yesterday's News Sentiment Report</h1>
+
+    <p>Overall Sentiment Score: <span class="score">4.96 / 10</span></p>
+
+    <div class="synopsis">
+      <h2>Synopsis</h2>
+      <pre>Sentiment Score: 4.96 out of 10
+
+Market sentiment is balanced, with no strong directional bias in the coverage.
+
+Sentiment Distribution: 0 headlines (0%) show strongly positive sentiment, 8 headlines (10%) show moderately positive sentiment, 10 headlines (12%) show moderately negative sentiment, 2 headlines (2%) show strongly negative sentiment</pre>
+    </div>
+
+    <div class="stats">
+      <div><strong>Headlines Analyzed:</strong> 84</div>
+      <div><strong>Sources Analyzed:</strong> 10</div>
+    </div>
+
+    <h2>Source Distribution</h2>
+    <ul>
+      <li>Fox News: 10</li>
+      <li>CNN: 9</li>
+      <li>USA Today: 10</li>
+      <li>Bloomberg: 10</li>
+      <li>Associated Press: 10</li>
+      <li>The Washington Post: 9</li>
+      <li>ABC News: 9</li>
+      <li>NBC News: 10</li>
+      <li>The Wall Street Journal: 10</li>
+      <li>Time: 3</li>
+    </ul>
+
+    <h2>Sample Headlines</h2>
+    <div class="headlines">
+      <ul>
+        <li>Conservative group exposes Democrats struggling to rally around a leader | Fox News Video</li>
+        <li>Republican lawmaker confronted over Signal chat leak, responds sharply</li>
+        <li>Border community reveals what Trump admin still needs to accomplish as crisis calms down: 'Undue burdens'
+        </li>
+        <li>RFK Jr dares governor of America's fattest state to do regular public weigh-ins</li>
+        <li>Ellen DeGeneres and wife Portia de Rossi unload California home after fleeing United States</li>
+        <li>Democrat mayor arrested for DUI seen on bodycam demanding officers call police chief</li>
+        <li>Elon Musk's AI company buys X in blockbuster $33B stock deal</li>
+        <li>Trump draws laughs when defining a 'woman' —&nbsp;until he touches on a serious issue</li>
+        <li>Trump effect forces Germany to reprioritize defense as nation plays catch-up in military spending</li>
+        <li>Uncovering security risks in wake of the signal leak | CNN</li>
+      </ul>
+    </div>
+
+    <h2>Sentiment Visualization Example</h2>
+    <p>(Note: This is an example visualization from a different dataset showing sentiment breakdown)</p>
+    <img
+      src="https://www.kaggleusercontent.com/kf/41642787/eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..UX5d_ZQKO-dWeBlTx5d_hA.X4Nw2fhNYQ4hnavLcin4RXKeiisrXLY687YDWRGKS-RXWF9wYToXhhZ3nlhP58LcHjNK3b89hkQF2LfpEWRh-pu51SjPE8KaUI0MuLGzGFv7Y66duo7c6awJ7BmAJXkCyCir8yCwiosEHDSrH47RTBeOTdqY4bzYmKhnr3v9PYfwpE7JyAmdYmB57jbhqp6fiN6CxnLtis96LjTsNyT2SZJE92aN0WL-eH4Dw5pzWDoEwU0oDIJ-GU2quyMF0r3-JsG_52wDaUoRYfGOLKO9rzzuCTDR3hTRB2y7fIJKI-L18S9Dg9HQJftwpZ3R33OhN1pgzVCt9pdAUIEMxjG6ek2qwuvTj2YZWfN5iaOFk_VLZxJ26DBeVoufxrIg18Wx3fCb3yaFTXNpv5IvAxu05cB-CDQSmtTSChdsz8-nnjYM9lZ-2Bv7xP-XsocvXQgmWFHqH3zim5xxZm0vWvXPAQVFrxE2foA8XBYlPSHMUb7-yX-S_-1ijpTFfDknKtJrGCzBP9ft6wwzgwvw6jH_Z821TDbdYWqnYwdX-D_3BHAfztOog85L6zyNlAXPfMYJSkc0O39ggouMLfSNjUN9_zeALnLEw3eRHdP42qD-uf4UaumQDqCttmnVY1drgY60l_KNLXM_Ts8x5yvewDH_Iw.HVTY1MFQIL26qOHxccUxoQ/__results___files/__results___35_1.png"
+      alt="Sentiment Analysis Visualization Example">
+
+  </div>
+</body>
+
+</html>

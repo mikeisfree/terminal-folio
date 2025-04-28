@@ -1,0 +1,11 @@
+terminal.tsx (handleSubmit function):
+When you type a command and press Enter (or click Execute), the handleSubmit function is triggered.
+It logs your input (addToLog("input", ...)).
+Special Case (npm start): It explicitly checks if the command is npm start. If it is, it logs "Starting GitHub Pulse dashboard..." and then sets the showGitHubPulse state variable to true after a 1-second delay.
+Rendering GitHubPulse: When showGitHubPulse is true, the component's main return statement conditionally renders the <GitHubPulse /> component instead of the terminal log and input form (see lines 338-348). This effectively replaces the terminal view with the GitHub Pulse dashboard. The "Back to Terminal" button sets showGitHubPulse back to false.
+General Command Processing: For other commands, it calls processCommand (from lib/command-processor.ts, not provided, but we can infer its role).
+Component Rendering (renderContent): If processCommand returns successfully and includes a componentName (like it probably does for daytona get-started), the addToLog function is called with this componentName. The renderContent function (lines 330-336) then looks up this name in the componentRegistry (likely defined in lib/component-registry.ts). If found, it renders the corresponding React component (e.g., <DaytonaGetStarted />) within the log area.
+github-pulse.tsx & daytona-get-started.tsx: These are standard React functional components designed to be displayed within the application. github-pulse takes over the whole view when activated, while daytona-get-started seems designed to be rendered within the terminal log output area via the renderContent mechanism.
+In summary: The app uses two main ways to render dynamic content based on commands:
+a) A specific state change (showGitHubPulse) triggered by a hardcoded command (npm start) to replace the entire terminal view.
+b) A general mechanism where commands can specify a componentName, which is then looked up in a registry and rendered within the terminal log using the renderContent function.
