@@ -191,28 +191,28 @@ export function OCRProject() {
 
         <div className="w-full lg:w-1/2 space-y-4">
           <Image
-            src="/images/ocr1.png"
+            src="/terminal-folio/images/ocr1.png"
             alt="OCR Example 1"
             width={300}
             height={200}
             className="rounded-lg border border-[#fe1d1d]"
           />
           <Image
-            src="/images/ocr2.png"
+            src="/terminal-folio/images/ocr2.png"
             alt="OCR Example 2"
             width={300}
             height={200}
             className="rounded-lg border border-[#fe1d1d]"
           />
           <Image
-            src="/images/ocr3.png"
+            src="/terminal-folio/images/ocr3.png"
             alt="OCR Example 3"
             width={300}
             height={200}
             className="rounded-lg border border-[#fe1d1d]"
           />
           <Image
-            src="/images/ocr4.png"
+            src="/terminal-folio/images/ocr4.png"
             alt="OCR Example 4"
             width={300}
             height={200}
