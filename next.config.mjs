@@ -1,15 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  basePath: process.env.NODE_ENV === 'production' ? '/terminal-folio' : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/terminal-folio/' : '',
+  basePath: '',
+  assetPrefix: '',
 
   // Image optimization and paths
   images: {
     unoptimized: true,
     domains: ['twistedtransistor.is-a.dev'],
     loader: 'default',
-    path: process.env.NODE_ENV === 'production' ? '/terminal-folio' : '',
+    path: '',
   },
 
   // Development configurations
@@ -27,7 +27,7 @@ const nextConfig = {
 
   // Runtime configuration for asset paths
   publicRuntimeConfig: {
-    basePath: process.env.NODE_ENV === 'production' ? '/terminal-folio' : '',
+    basePath: '',
   }
 }
 
