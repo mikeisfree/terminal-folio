@@ -1,22 +1,17 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  basePath: '/terminal-folio',
-  assetPrefix: '/terminal-folio/',
-  // Asset configurations
+  basePath: process.env.NODE_ENV === 'production' ? '/terminal-folio' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/terminal-folio/' : '',
+
+  // Image optimization and paths
   images: {
     unoptimized: true,
-    path: '/terminal-folio/images/',
-    domains: ['mikeisfree.github.io']
+    domains: ['mikeisfree.github.io'],
+    // This ensures images work in both dev and prod
+    path: process.env.NODE_ENV === 'production' ? '/terminal-folio/_next/image' : '/_next/image',
   },
-  // Custom asset paths for public directory
-  publicRuntimeConfig: {
-    basePath: '/terminal-folio',
-    mediaPath: '/terminal-folio/',
-    imagesPath: '/terminal-folio/images/',
-    soundsPath: '/terminal-folio/sounds/',
-    videosPath: '/terminal-folio/'
-  },
+
   // Development configurations
   eslint: {
     ignoreDuringBuilds: true,
@@ -28,6 +23,16 @@ const nextConfig = {
     webpackBuildWorker: true,
     parallelServerBuildTraces: true,
     parallelServerCompiles: true,
+  },
+
+  // This helps Next.js handle static assets correctly in both environments
+  publicRuntimeConfig: {
+    basePath: process.env.NODE_ENV === 'production' ? '/terminal-folio' : '',
+  },
+
+  // Add support for proper asset path resolution in static export
+  env: {
+    NEXT_PUBLIC_BASE_PATH: process.env.NODE_ENV === 'production' ? '/terminal-folio' : '',
   }
 }
 

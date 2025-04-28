@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState, useCallback } from 'react';
-import styles from './VideoLoader.module.css'; // Adjust the path as necessary
+import styles from './VideoLoader.module.css';
+import { getVideoPath } from '@/lib/utils';
+import { Video } from '@/components/ui/video';
 
 const LOAD_DURATION = 20000; // 20 seconds
 const MIN_LOAD_TIME = 0; // 2 seconds minimum before skip
@@ -162,17 +164,15 @@ const VideoLoader = ({ onLoadComplete, onSkip }: Props) => {
 
   return (
     <div className={styles.loaderContainer}>
-      <video
+      <Video
         ref={videoRef}
         className={styles.loaderVideo}
+        src="loader.mp4"
         playsInline
         preload="auto"
         loop // Keep loop
         muted // Start muted - Increases chance of autoplay working
-        // autoPlay // Can add this, but attemptPlay handles it
-      >
-        <source src="/loader.mp4" type="video/mp4" />
-      </video>
+      />
       <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white text-sm opacity-75 pointer-events-none">
  {/* Status text is now managed more dynamically */}
  {statusText}

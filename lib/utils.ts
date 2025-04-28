@@ -6,24 +6,30 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
+// Get runtime config and environment variables
 const { publicRuntimeConfig } = getConfig() || { publicRuntimeConfig: {} }
+const isDev = process.env.NODE_ENV === 'development'
+const basePath = isDev ? '' : (process.env.NEXT_PUBLIC_BASE_PATH || publicRuntimeConfig?.basePath || '/terminal-folio')
 
-export function getAssetPath(path: string) {
+// Helper function to clean and construct asset paths
+function createAssetPath(path: string, prefix?: string) {
+  // Return external URLs as-is
   if (path.startsWith('http')) return path
-  return `${publicRuntimeConfig.basePath || ''}${path}`
+  
+  // Clean the path by removing leading slash
+  const cleanPath = path.replace(/^\//, '')
+  
+  // Construct the full path
+  const parts = [basePath]
+  if (prefix) parts.push(prefix)
+  parts.push(cleanPath)
+  
+  // Join all parts and ensure proper slashes
+  return parts.filter(Boolean).join('/').replace(/\/+/g, '/')
 }
 
-export function getImagePath(name: string) {
-  if (name.startsWith('http')) return name
-  return `${publicRuntimeConfig.imagesPath || '/images/'}${name}`
-}
-
-export function getSoundPath(name: string) {
-  if (name.startsWith('http')) return name
-  return `${publicRuntimeConfig.soundsPath || '/sounds/'}${name}`
-}
-
-export function getVideoPath(name: string) {
-  if (name.startsWith('http')) return name
-  return `${publicRuntimeConfig.videosPath || '/'}${name}`
-}
+// Export utility functions for different asset types
+export const getAssetPath = (path: string) => createAssetPath(path)
+export const getImagePath = (path: string) => createAssetPath(path, 'images')
+export const getSoundPath = (path: string) => createAssetPath(path, 'sounds')
+export const getVideoPath = (path: string) => createAssetPath(path)

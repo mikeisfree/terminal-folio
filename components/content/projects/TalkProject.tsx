@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { ChevronRight } from "lucide-react";
 import Image from "next/image";
+import { Video } from "@/components/ui/video";
 
 interface FeatureItem {
   title: string;
@@ -183,15 +184,13 @@ export function TalkProject() {
             height={400}
             className="rounded-lg border border-[#fe1d1d] brightness-50 opacity-80 hover:brightness-100"
           />
-          <video
+          <Video
+            src="talk.mp4"
             className="w-full rounded-lg border border-[#fe1d1d] brightness-50 opacity-80 hover:brightness-100"
             autoPlay
             muted
             loop
-          >
-            <source src="/talk.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+          />
         </div>
       </div>
     </div>
