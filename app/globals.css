@@ -25,6 +25,8 @@
     --input: 240 5.9% 90%;
     --ring: 142.1 76.2% 36.3%;
     --radius: 0.5rem;
+    --sc-bcg: rgba(198, 196, 197, 0.15);
+    --sc-bsh: rgba(22, 16, 16, 0.3);
   }
 
   .dark {
@@ -229,7 +231,7 @@
   opacity: 0;
   pointer-events: none;
   z-index: 12;
-  animation: flicker 3s infinite;
+  animation: flicker 0.1s infinite;
 }
 
 /* Glow effect for text */
@@ -326,7 +328,7 @@ background-size: 100%; */
   }
 
   5% {
-    opacity: 0.2;
+    opacity: 0.3;
   }
 
   10% {
@@ -334,7 +336,7 @@ background-size: 100%; */
   }
 
   15% {
-    opacity: 0.1;
+    opacity: 0.2;
   }
 
   20% {
@@ -346,7 +348,7 @@ background-size: 100%; */
   }
 
   60% {
-    opacity: 0.1;
+    opacity: 0.4;
   }
 
   65% {
@@ -354,7 +356,7 @@ background-size: 100%; */
   }
 
   70% {
-    opacity: 0.1;
+    opacity: 0.2;
   }
 
   75% {
@@ -362,7 +364,7 @@ background-size: 100%; */
   }
 
   80% {
-    opacity: 0.1;
+    opacity: 0.3;
   }
 
   85% {
@@ -370,7 +372,7 @@ background-size: 100%; */
   }
 
   90% {
-    opacity: 0.1;
+    opacity: 0.2;
   }
 
   95% {
@@ -378,7 +380,7 @@ background-size: 100%; */
   }
 
   100% {
-    opacity: 0.1;
+    opacity: 0.2;
   }
 }
 

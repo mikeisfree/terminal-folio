@@ -36,7 +36,7 @@ export default function Home() {
         <VideoLoader onLoadComplete={handleLoadComplete} onSkip={handleSkip} />
       ) : (
         <>
-          <div className="absolute inset-0 h-full w-full overflow-hidden">
+          <div className="absolute h-full w-full overflow-hidden">
             {/* <Ripple /> */}
             <MeshBackground />
           </div>
@@ -46,7 +46,7 @@ export default function Home() {
             <div className="vignette"></div>
             {/* <div className="scan-line1"></div> */}
             <div className="flicker"></div>
-            {/* {/* <div className="scan-line2"></div> */}
+            <div className="scan-line2"></div>
             {/* <div className="scan-line3"></div> */}
             <header className="flex absolute top-0 w-full z-20 justify-between items-center bg-transparent px-4">
               <h1 className="text-xl font-bold text-green-500 terminal-text"></h1>
@@ -61,7 +61,7 @@ export default function Home() {
             <main className="flex-1 h-screen">
               <SplitTerminal />
             </main>
-            <footer className="fixed bottom-0 w-full text-center p-2 text-xs text-gray-600">
+            <footer className="fixed bottom-0 w-full text-center p-2 text-xs">
               <p>⟊⫯⧔⦳⩑-⦾⩜⨐ ⩂⩏⦪⦼ ⬯⫰⦣⨎⩄⩑ ⦓⦵⩩⩂ ⦚⫽⦋⨝⬯⫪⦻⦴⩀⧑</p>
             </footer>
           </div>
