@@ -88,11 +88,11 @@ export function Terminal({ isEmbedded = false }: TerminalProps) {
             content: isEmbedded ? "§§> Terminal ready" : asciiArt.logo,
             timestamp: new Date(),
           },
-          {
-            type: "system",
-            content: "§§> ALIEN-OS Terminal v1.0.3 initialized",
-            timestamp: new Date(),
-          },
+          // {
+          //   type: "system",
+          //   content: "§§> ALIEN-OS Terminal v1.0.3 initialized",
+          //   timestamp: new Date(),
+          // },
           {
             type: "system",
             content: "§§> Enter 'help' for available commands",

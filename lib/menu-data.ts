@@ -50,7 +50,7 @@ export const menuData: MenuItem[] = [
         // description: "View available terminal commands",
         commands: ["help", "status", "clear"],
         content:
-          "The terminal provides a set of commands for interacting with the system. Use 'help' to see all available commands.",
+          "",
       },
       {
         id: "terminal-features",
