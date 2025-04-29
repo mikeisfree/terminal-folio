@@ -342,12 +342,12 @@ export function SplitTerminal() {
           )}
         </div>
 
-        <div className="w-full border-dashed border-gray-700 p-1 overflow-auto">
+        <div className="w-full p-1 overflow-auto">
           {/* <MagicCard> */}
           {/* <Calendar /> */}
-          <div className="relative flex flex-col items-center justify-center overflow-hidden rounded-lg border bg-background">  
+          <div className="relative flex flex-col items-center justify-center overflow-hidden">  
             <Tree
-              className="overflow-hidden rounded-md bg-background p-2"
+              className="overflow-hidden p-2"
               initialSelectedId="7"
               initialExpandedItems={[
                 "1",

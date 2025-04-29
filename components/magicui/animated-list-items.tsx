@@ -20,29 +20,32 @@ let notifications = [
     time: "15m ago",
 
     icon: "💸",
-    color: "#00C9A7",
+    // color: "#00C9A7",
+    color: "transparent",
   },
   {
     name: "User signed up",
     description: "Magic UI",
     time: "10m ago",
     icon: "👤",
-    color: "#FFB800",
+    // color: "#FFB800",
+    color: "transparent",
   },
   {
     name: "New message",
     description: "Magic UI",
     time: "5m ago",
     icon: "💬",
-    color: "#FF3D71",
+    // color: "#FF3D71",
+    color: "transparent",
   },
   {
     name: "New event",
     description: "Magic UI",
     time: "2m ago",
     icon: "🗞️",
-    color: "#1E86FF",
-
+    // color: "#1E86FF",
+    color: "transparent",
   },
 ];
 
@@ -71,7 +74,7 @@ const Notification = ({ name, description, icon, color, time }: Item) => {
           <span className="text-lg">{icon}</span>
         </div>
         <div className="flex flex-col overflow-hidden">
-          <figcaption className="flex flex-row items-center whitespace-pre text-lg font-medium dark:text-white ">
+          <figcaption className="flex flex-row items-center whitespace-pre text-lg font-medium dark:text-[var(--main-text)]] ">
             <span className="text-sm sm:text-lg">{name}</span>
             <span className="mx-1">·</span>
             <span className="text-xs text-gray-500">{time}</span>

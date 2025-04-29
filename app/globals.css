@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    --main-text: rgba(254, 29, 29);
+    /* --main-text: rgba(254, 29, 29); */
     --background: 0 0% 100%;
     --foreground: 240 10% 3.9%;
     --card: 0 0% 100%;
@@ -30,6 +30,7 @@
   .dark {
     /* --main-text: rgba(254, 29, 29); */
     --main-text: #f6f1da;
+    --main-text-30: rgba(246, 241, 218, 0.297);
     --main-accent: rgb(254, 29, 29);
     --main-accent-50: rgba(254, 29, 29, 0.499);
     --yellow-accent: rgba(211, 200, 113);
