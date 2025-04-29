@@ -196,10 +196,17 @@ export function SplitTerminal() {
               <div className="scan-line2"></div>
               <div className="scan-line3"></div> */}
         {/* ASCII Art Display */}
-        <div className="whitespace-pre text-xl leading-none font-mono terminal-text-red">
+
+        {/* <div className="whitespace-pre text-xl leading-none font-mono terminal-text-red">
           {asciiArt[activeMenu.asciiArt as keyof typeof asciiArt] ||
             asciiArt.logo}
+        </div> */}
+
+        <div className={`whitespace-pre text-xl leading-none font-mono ascii-art ${activeMenu.asciiArt}`}>
+          {asciiArt[activeMenu.asciiArt as keyof typeof asciiArt] ||
+           asciiArt.logo}
         </div>
+
         {/* Content Display */}
         <div className="mt-4 font-mono">
           <h2 className="text-green-100 mb-2">{activeMenu.title}</h2>

@@ -482,3 +482,222 @@ background-size: 100%; */
     }
   }
 } */
+
+
+* ASCII Art Specific Styles */ .ascii-art {
+  transition: all 0.3s ease;
+}
+
+/* Logo style */
+.ascii-art.logo {
+  color: var(--main-accent);
+  text-shadow: 0 0 10px var(--main-accent-50);
+  font-size: 1.2rem;
+}
+
+/* Warning style */
+.ascii-art.warning {
+  color: #ff4444;
+  text-shadow: 0 0 15px rgba(255, 68, 68, 0.7);
+  animation: warning-pulse 1.5s infinite;
+}
+
+/* Access granted style */
+.ascii-art.access_granted {
+  color: #44ff44;
+  text-shadow: 0 0 15px rgba(68, 255, 68, 0.7);
+  animation: success-pulse 2s infinite;
+}
+
+/* Access denied style */
+.ascii-art.access_denied {
+  color: #ff0000;
+  text-shadow: 0 0 15px rgba(255, 0, 0, 0.7);
+  animation: danger-pulse 0.5s infinite;
+}
+
+/* Neofetch style */
+.ascii-art.neofetch {
+  color: #88ccff;
+  text-shadow: 0 0 10px rgba(136, 204, 255, 0.5);
+  font-size: 0.9rem;
+  animation: text-flicker 1s infinite, rocket-pulse 1s infinite;
+}
+
+/* Alien style */
+.ascii-art.alien {
+  color: #50fa7b;
+  text-shadow: 0 0 15px rgba(80, 250, 123, 0.6);
+  animation: alien-pulse 3s infinite;
+}
+
+/* Rocket style */
+.ascii-art.rocket {
+  color: #bd93f9;
+  text-shadow: 0 0 15px rgba(189, 147, 249, 0.6);
+  animation: rocket-pulse 2s infinite;
+}
+
+/* Nexus style */
+.ascii-art.nexus {
+  color: #ff79c6;
+  text-shadow: 0 0 15px rgba(255, 121, 198, 0.6);
+  font-size: 1.1rem;
+}
+
+/* Quantum style */
+.ascii-art.quantum {
+  color: #8be9fd;
+  text-shadow: 0 0 15px rgba(139, 233, 253, 0.6);
+  animation: quantum-pulse 4s infinite;
+}
+
+/* Projects style */
+.ascii-art.projects {
+  color: var(--main-text);
+  text-shadow: 0 0 15px, var(--main-text);
+}
+
+/* Nova style */
+.ascii-art.nova {
+  color: #ffb86c;
+  text-shadow: 0 0 15px rgba(255, 184, 108, 0.6);
+  animation: nova-pulse 3s infinite;
+}
+
+/* Terminal style */
+.ascii-art.terminal {
+  color: #6272a4;
+  text-shadow: 0 0 15px rgba(98, 114, 164, 0.6);
+}
+
+/* Daytona styles */
+.ascii-art.daytona,
+.ascii-art.daytona1 {
+  color: #ff5555;
+  text-shadow: 0 0 15px rgba(255, 85, 85, 0.6);
+  font-size: 0.85rem;
+  letter-spacing: -0.5px;
+}
+
+/* Emitter style */
+.ascii-art.emitter {
+  color: #50fa7b;
+  text-shadow: 0 0 15px rgba(80, 250, 123, 0.6);
+  animation: emitter-pulse 2s infinite;
+}
+
+/* Pyramid styles */
+.ascii-art.Pyramid,
+.ascii-art.Piramide2 {
+  color: #bd93f9;
+  text-shadow: 0 0 15px rgba(189, 147, 249, 0.6);
+  font-size: 1rem;
+}
+
+
+/* Avatar style */
+.ascii-art.avatarascii {
+  color: #8be9fd !important;
+  text-shadow: 0 0 15px rgba(139, 233, 253, 0.6);
+  font-size: 0.8rem;
+  line-height: 1.1;
+  animation: quantum-pulse 2s infinite, success-pulse 2s infinite;
+}
+
+/* Animation keyframes */
+@keyframes alien-pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes success-pulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.02);
+  }
+}
+
+@keyframes danger-pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes alien-pulse {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes rocket-pulse {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-1px);
+  }
+}
+
+@keyframes quantum-pulse {
+
+  0%,
+  100% {
+    filter: hue-rotate(0deg);
+  }
+
+  50% {
+    filter: hue-rotate(45deg);
+  }
+}
+
+@keyframes nova-pulse {
+
+  0%,
+  100% {
+    filter: brightness(1);
+  }
+
+  50% {
+    filter: brightness(1.2);
+  }
+}
+
+@keyframes emitter-pulse {
+
+  0%,
+  100% {
+    text-shadow: 0 0 15px rgba(80, 250, 123, 0.6);
+  }
+
+  50% {
+    text-shadow: 0 0 25px rgba(80, 250, 123, 0.8);
+  }
+}

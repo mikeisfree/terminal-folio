@@ -267,7 +267,7 @@ export const menuData: MenuItem[] = [
     id: "whoami",
     title: "whoami",
     // subtitle: "AI assistant platform",
-    asciiArt: "nova",
+    asciiArt: "avatarascii",
     // description: "Nova is an AI assistant platform for developers.",
     // commands: ["nova ask", "nova generate", "nova explain", "nova optimize"],
     subItems: [
