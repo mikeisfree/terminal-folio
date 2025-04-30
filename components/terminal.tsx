@@ -410,7 +410,7 @@ export function Terminal({ isEmbedded = false }: TerminalProps) {
           <div className="crt-overlay"></div>
           <div className="vignette"></div>
           <div className="scan-line1"></div>
-          <div className="flicker"></div>
+          {/* <div className="flicker"></div> */}
           <div className="scan-line2"></div>
           <div className="scan-line3"></div>
         </>

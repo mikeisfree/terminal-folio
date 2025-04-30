@@ -7,35 +7,46 @@ import { Button } from "@/components/ui/button";
 import { Moon, Sun } from "lucide-react";
 import MeshBackground from '@/components/meshBackground';
 // import { Ripple } from "@/components/magicui/ripple";
-import VideoLoader from "../components/VideoLoader";
+// import VideoLoader from "../components/VideoLoader";
+import HydraPreloader from '@/components/HydraPreloader';
+
 
 export default function Home() {
   const [isDarkMode, setIsDarkMode] = useState(true);
-  const [loading, setLoading] = useState(true);
+  // const [loading, setLoading] = useState(true); //previous preloader
+  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     document.documentElement.classList.add("dark");
   }, []);
 
-  const handleLoadComplete = () => {
-    setLoading(false);
-  };
-
-  const handleSkip = () => {
-    setLoading(false);
-  };
+  // const handleLoadComplete = () => {
+  //   setLoading(false);
+  // };
+          //Previous preloader
+  // const handleSkip = () => {
+  //   setLoading(false);
+  // };
 
   const toggleTheme = () => {
     setIsDarkMode(!isDarkMode);
     document.documentElement.classList.toggle("dark");
   };
 
+
+
   return (
     <ThemeProvider>
-      {loading ? (
+      {/* {loading ? (
         <VideoLoader onLoadComplete={handleLoadComplete} onSkip={handleSkip} />
-      ) : (
+      ) : ( */}
+
+
+{!loaded && <HydraPreloader onComplete={() => setLoaded(true)} />}
+{loaded && (
         <>
+
+        
           <div className="absolute h-full w-full overflow-hidden">
             {/* <Ripple /> */}
             <MeshBackground />
@@ -45,7 +56,7 @@ export default function Home() {
             <div className="crt-overlay"></div>
             <div className="vignette"></div>
             {/* <div className="scan-line1"></div> */}
-            <div className="flicker"></div>
+            {/* <div className="flicker"></div> */}
             <div className="scan-line2"></div>
             {/* <div className="scan-line3"></div> */}
             <header className="flex absolute top-0 w-full z-20 justify-between items-center bg-transparent px-4">

@@ -18,6 +18,7 @@ export default function RootLayout({
       <body>
 
         <ThemeProvider className="pt-4">
+          <div className="glitch-seq gl3" />
           {children}
 
         </ThemeProvider>
