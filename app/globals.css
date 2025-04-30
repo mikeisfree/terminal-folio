@@ -67,22 +67,16 @@
   .scrollbar-custom::-webkit-scrollbar {
     width: 6px !important;
     height: 6px !important;
-    ;
     /* Increased width */
-
   }
 
   .scrollbar-custom::-webkit-scrollbar-thumb {
     /* background: #fe1d1da9 !important; */
-
     /* box-shadow: 0 0 15px rgba(254, 29, 29, 0.5) !important; */
     /* box-shadow: 0 0 15px rgba(244, 247, 244, 0.7) !important; */
     border-radius: 10px;
-
     background-color: hsla(0, 0%, 0%, 0);
     background-image: radial-gradient(circle farthest-side at center, hsl(0, 100%, 50%) 0%, hsla(0, 0%, 0%, 0) 100%);
-    ;
-
   }
 
   .scrollbar-custom::-webkit-scrollbar-track {
@@ -95,9 +89,7 @@
 
 * {
   /* @apply border-border; */
-
   /*disable text highlight & mouse cursor */
-
   /*  cursor: none !important; 
   -webkit-touch-callout: none !important;
   -webkit-user-drag: none !important;
@@ -106,9 +98,7 @@
 
   body {
     /* @apply bg-background text-foreground; */
-
     overflow: hidden;
-
     /* background-color: hsl(347, 51%, 9%); */
     /* background-color: hsl(347, 51%, 9%); */
     /* background-image: radial-gradient(circle farthest-side at center, hsl(35, 20%, 41%) 0%, hsl(347, 42%, 9%) 50%, hsl(347, 51%, 9%) 70%);
@@ -154,7 +144,6 @@
   background: rgba(240, 15, 79, 0.15); */
   box-shadow: 3px 3px 25px rgba(34, 33, 33, 0.5);
   background: rgba(239, 169, 192, 0.15);
-
 }
 
 .scan-line2 {
@@ -199,7 +188,6 @@
     linear-gradient(rgba(18, 16, 16, 0.1) 50%, rgba(0, 0, 0, 0.02) 50%),
     linear-gradient(90deg, rgba(255, 0, 0, 0.1), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06)); 
     */
-
   background: linear-gradient(rgba(18, 16, 16, 0.1) 50%, rgba(0, 0, 0, 0.02) 50%),
     linear-gradient(90deg, rgba(15, 14, 14, 0.1), rgba(25, 27, 25, 0.02), rgba(26, 26, 29, 0.06));
   background-size: 100% 2px, 3px 100%;
@@ -484,7 +472,9 @@ background-size: 100%; */
 } */
 
 
-* ASCII Art Specific Styles */ .ascii-art {
+/*ASCII Art Specific Styles */
+
+.ascii-art {
   transition: all 0.3s ease;
 }
 
