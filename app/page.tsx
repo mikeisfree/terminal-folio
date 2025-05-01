@@ -52,12 +52,12 @@ export default function Home() {
             <MeshBackground />
           </div>
           <div className="max-h-screen flex flex-col overflow-hidden">
-            <div className="scan-line"></div>
             <div className="crt-overlay"></div>
             <div className="vignette"></div>
+            {/* <div className="scan-line"></div> */}
             {/* <div className="scan-line1"></div> */}
             {/* <div className="flicker"></div> */}
-            <div className="scan-line2"></div>
+            {/* <div className="scan-line2"></div> */}
             {/* <div className="scan-line3"></div> */}
             <header className="flex absolute top-0 w-full z-20 justify-between items-center bg-transparent px-4">
               <h1 className="text-xl font-bold text-green-500 terminal-text"></h1>

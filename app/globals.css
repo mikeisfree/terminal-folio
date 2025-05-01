@@ -525,8 +525,26 @@ background-size: 100%; */
   color: #88ccff;
   text-shadow: 0 0 10px rgba(136, 204, 255, 0.5);
   font-size: 0.9rem;
-  animation: text-flicker 1s infinite, rocket-pulse 1s infinite;
+  animation: text-flicker 1s infinite, rocket-pulse 1s infinite, glitch 3s infinite;
 }
+
+/* Neofetch style */
+.ascii-art.triangle {
+  color: #88ccff;
+  text-shadow: 0 0 10px rgba(136, 204, 255, 0.5);
+  font-size: 0.9rem;
+  animation: text-flicker 1s infinite, rocket-pulse 1s infinite, glitch 3s infinite;
+}
+
+/* Neofetch style */
+.ascii-art.triangle1 {
+  color: #88ccff;
+  white-space: pre;
+  text-shadow: 0 0 10px rgba(136, 204, 255, 0.5);
+  font-size: 0.9rem;
+  animation: text-flicker 1s infinite, rocket-pulse 1s infinite, glitch 3s infinite;
+}
+
 
 /* Alien style */
 .ascii-art.alien {
@@ -709,6 +727,23 @@ background-size: 100%; */
   }
 }
 
+@keyframes glitch {
+
+  2%,
+  64% {
+    transform: translate(2px, 0) skew(0deg);
+  }
+
+  4%,
+  60% {
+    transform: translate(-2px, 0) skew(0deg);
+  }
+
+  62% {
+    transform: translate(0, 0) skew(5deg);
+  }
+}
+
 .glitch-seq {
   position: absolute;
   top: 0px;
@@ -745,16 +780,28 @@ background-size: 100%; */
   animation-delay: .7s;
 }
 
-.gl3 {
+.glAnim {
   position: absolute;
-
   top: 0px;
   left: 0px;
   width: 1px;
   height: 100%;
+  z-index: 9999;
   background-color: rgba(245, 67, 108, 0.438);
   mix-blend-mode: color-dodge;
+}
+
+.gl3 {
   animation: glit3 7s steps(30, start) infinite;
+}
+
+.gl4 {
+  animation: glit3 5s steps(30, start) infinite, alien-pulse 5s infinite;
+  width: 25px;
+}
+
+.gl5 {
+  animation: glit3 9s steps(30, start) infinite;
 }
 
 @keyframes glit3 {

@@ -191,7 +191,7 @@ const TreeIndicator = forwardRef<
       dir={direction}
       ref={ref}
       className={cn(
-        "absolute left-1.5 h-full w-px rounded-md bg-[var(--main-text-30)] py-3 duration-300 ease-in-out hover:bg-slate-300 rtl:right-1.5",
+        "absolute left-1.5 h-full w-px rounded-md py-3 duration-300 ease-in-out hover:bg-slate-300 rtl:right-1.5",
         className,
       )}
       {...props}
@@ -245,7 +245,7 @@ const Folder = forwardRef<
       >
         <AccordionPrimitive.Trigger
           className={cn(
-            `flex items-center gap-1 rounded-md text-sm`,
+            `flex items-center gap-1 rounded-md uppercase text-sm`,
             className,
             {
               "bg-muted rounded-md": isSelect && isSelectable,
@@ -314,7 +314,7 @@ const File = forwardRef<
         type="button"
         disabled={!isSelectable}
         className={cn(
-          "flex w-fit h-[max-height] items-center gap-1 rounded-md pr-1 md:text-lg duration-200 ease-in-out rtl:pl-1 rtl:pr-0",
+          "flex w-fit h-[max-height] items-center gap-1 rounded-md pr-1 md:text-xs uppercase duration-200 ease-in-out rtl:pl-1 rtl:pr-0",
           {
             "bg-muted": isSelected && isSelectable,
           },
