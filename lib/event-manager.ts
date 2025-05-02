@@ -50,7 +50,9 @@ function handlePlayAudio(params: string, app: any): void {
     // If params is a message (contains spaces or special chars), use error.wav
     const soundFile = (params && (params.includes(' ') || /[^a-zA-Z0-9._-]/.test(params))) 
       ? "error.wav"
-      : (params || "beep.mp3");
+      : params 
+        ? `${params}.mp3`  // Automatically append .mp3 to the filename
+        : "beep.mp3";
       
     const audio = new Audio(getSoundPath(soundFile));
     audio.play();

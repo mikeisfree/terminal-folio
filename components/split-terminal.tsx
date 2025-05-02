@@ -8,15 +8,12 @@ import { componentRegistry } from "@/lib/component-registry";
 import { SystemInfoSidebar } from "@/components/ui/system-info-sidebar"; // Import the new sidebar
 import { File, Folder, Tree } from "@/components/magicui/file-tree";
 import { AnimatedListItems } from "@/components/magicui/animated-list-items";  
-// import { MagicCard } from "@/components/magicui/magic-card";
 
 import {
   AnimatedSpan,
   Terminal1,
   TypingAnimation,
 } from "@/components/magicui/terminal"; // Uncommented import
-
-// import { TypingAnimation } from "@/components/magicui/typing-animation";
 
 const ELEMENTS = [
   {
@@ -271,19 +268,19 @@ export function SplitTerminal() {
       {/* Right Menu Section - 20% width (fixed, hidden on small screens) */}
       <div
         ref={menuRef}
-        className={`hidden md:flex fixed top-0 right-0 w-[20%] terminal-text-red flex-col h-full overflow-y-auto p-4 ${
+        className={`hidden md:flex fixed top-0 right-0 w-[20%] terminal-text-red flex-col h-full overflow-y-auto${
           focusedSection === "menu" ? "ring-green-500" : ""
         }`}
         tabIndex={0}
         onClick={() => setFocusedSection("menu")}
       >
         {/* Main Menu */}
-        <div className="p-4 flex flex-row mt-4 w-full border-[1px] border-[var(--main-accent)] bg-black/20 rounded-sm backdrop-blur-sm">
-          <div className="mb-8 w-full">
+        <div className="min-h-[200px] p-2 flex flex-row mb-10 w-full border-b-[2px] border-dashed border-[var(--main-accent-50)] bg-black/20 rounded-sm backdrop-blur-sm">
+          <div className="min-w-1/2 w-1/2 h-[200px] flex-col items-center">
             {menuData.map((item, index) => (
               <div
                 key={item.id}
-                className={`mb-4 uppercase cursor-pointer transition-all duration-200 ${
+                className={` flex mb-4 uppercase cursor-pointer transition-all duration-200 ${
                   activeMenuIndex === index
                     ? "neon-red text-md drop-shadow-[0_0_3px_var(--main-accent)]"
                     : "terminal-text-red text-sm hover:text-[var(--main-accent)]"
@@ -297,7 +294,7 @@ export function SplitTerminal() {
                   </span>
                   {item.title}
                 </div>
-                <div className="text-sm opacity-80 ml-3">{item.subtitle}</div>
+                <div className="text-sm opacity-80">{item.subtitle}</div>
               </div>
             ))}
           </div>
@@ -322,10 +319,10 @@ export function SplitTerminal() {
                   onClick={() => handleSubMenuItemClick(index)}
                 >
                   <div className="flex text-xs items-center">
-                    <span className={`mr-2 w-4 inline-block ${activeSubMenuIndex === index ? "text-[var(--main-accent)]" : "opacity-50"}`}>
+                    <span className={`mx-1 inline-block ${activeSubMenuIndex === index ? "text-[var(--main-accent)]" : "opacity-50"}`}>
                       {activeSubMenuIndex === index ? "►" : "•"}
                     </span>
-                    <span className={`${activeSubMenuIndex === index ? "border-b text-sm border-[var(--main-accent)] pb-[2px]" : ""}`}>
+                    <span className={`${activeSubMenuIndex === index ? "border-b text-sm border-[var(--main-accent)]" : ""}`}>
                       {subItem.title}
                     </span>
                   </div>
@@ -350,8 +347,6 @@ export function SplitTerminal() {
         </div>
 
         <div className="w-full p-1 overflow-auto">
-          {/* <MagicCard> */}
-          {/* <Calendar /> */}
           <div className="relative flex flex-col items-center justify-center overflow-hidden">  
             <Tree
               className="overflow-hidden p-2"

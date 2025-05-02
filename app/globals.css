@@ -57,10 +57,6 @@
     --input: 240 3.7% 15.9%;
     --ring: 142.4 71.8% 29.2%;
   }
-
-
-
-
 }
 
 @layer base {
@@ -225,6 +221,10 @@
   color: white;
   animation: glow-pulse 2s infinite alternate;
   /* filter: drop-shadow 10px 10px 20px rgb(255, 255, 255); */
+}
+
+.dropShadow {
+  filter: drop-shadow 10px 10px 20px rgb(255, 255, 255);
 }
 
 .terminal-text-cyan {
@@ -789,6 +789,7 @@ background-size: 100%; */
   z-index: 9999;
   background-color: rgba(245, 67, 108, 0.438);
   mix-blend-mode: color-dodge;
+  pointer-events: none;
 }
 
 .gl3 {

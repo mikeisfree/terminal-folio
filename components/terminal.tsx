@@ -22,6 +22,7 @@ import {
 import { asciiArt } from "@/lib/ascii-art";
 import { GitHubPulse } from "./github-pulse";
 import { componentRegistry } from "@/lib/component-registry";
+import SpeechRecognitionComponent from "@/components/SpeechRecognitionComponent";
 
 interface LogEntry {
   type: "input" | "output" | "error" | "system";
@@ -483,11 +484,12 @@ export function Terminal({ isEmbedded = false }: TerminalProps) {
           <Button
             type="submit"
             variant="ghost"
-            className="ml-2 text-white terminal-text hover:text-red-500 hover:bg-gray-900"
+            className="ml-2 text-white border-solid border-[2px] border-gray-200 hover:text-red-600 hover:border-red-600"
             disabled={isTyping}
           >
             Execute
           </Button>
+          <SpeechRecognitionComponent input={input} setInput={setInput} />
         </div>
       </form>
     </div>

@@ -740,6 +740,15 @@ function handleRunDiagnostics(params: string, app: any): void {
 3. Try adding a user interaction before playing audio
 
 
+### Speech Recognition module
+
+Simple speech recognition module created.
+To handle errors file speech.d.ts was created inside @/types 
+
+features:
+1. pause on user type
+2. 
+
 ## Conclusion
 
 This guide covers the fundamentals of customizing events and scenarios in the ALIEN-OS Terminal Simulator. By combining these techniques, you can create complex, interactive experiences for users.
