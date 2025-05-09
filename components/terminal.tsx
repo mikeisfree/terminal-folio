@@ -22,7 +22,9 @@ import {
 import { asciiArt } from "@/lib/ascii-art";
 import { GitHubPulse } from "./github-pulse";
 import { componentRegistry } from "@/lib/component-registry";
-import SpeechRecognitionComponent from "@/components/SpeechRecognitionComponent";
+import SpeechRecognitionComponent, {
+  SpeechRecognitionHandle,
+} from "@/components/SpeechRecognitionComponent";
 
 interface LogEntry {
   type: "input" | "output" | "error" | "system";
@@ -48,6 +50,9 @@ export function Terminal({ isEmbedded = false }: TerminalProps) {
   const [showGitHubPulse, setShowGitHubPulse] = useState(false);
   const logEndRef = useRef<HTMLDivElement>(null);
   const [mounted, setMounted] = useState(false);
+  const speechRef = useRef<SpeechRecognitionHandle>(null);
+  const formRef = useRef<HTMLFormElement | null>(null);
+
 
   useEffect(() => {
     setMounted(true);
@@ -467,6 +472,7 @@ export function Terminal({ isEmbedded = false }: TerminalProps) {
       </div>
 
       <form
+        ref={formRef} //speech recog auto execute
         onSubmit={handleSubmit}
         className="p-4 w-full border-t border-[var(---main-text)] z-10"
         tabIndex={-1}
@@ -477,9 +483,15 @@ export function Terminal({ isEmbedded = false }: TerminalProps) {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             className="flex-1 bg-transparent border-none text-[var(--main-text)] terminal-text focus-visible:ring-0 focus-visible:ring-offset-0"
-            placeholder="Enter command..."
+            placeholder="Enter command... (Ctrl+A for voice input)"
             disabled={isTyping}
-            autoFocus // Auto focus the input when component mounts
+            autoFocus
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' && !e.repeat) {
+                e.preventDefault();
+                handleSubmit(e);
+              }
+            }}
           />
           <Button
             type="submit"
@@ -489,7 +501,12 @@ export function Terminal({ isEmbedded = false }: TerminalProps) {
           >
             Execute
           </Button>
-          <SpeechRecognitionComponent input={input} setInput={setInput} />
+          <SpeechRecognitionComponent
+            ref={speechRef}
+            input={input}
+            setInput={setInput}
+            formRef={formRef}
+          />
         </div>
       </form>
     </div>
