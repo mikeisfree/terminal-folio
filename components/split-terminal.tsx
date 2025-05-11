@@ -204,8 +204,10 @@ export function SplitTerminal() {
            asciiArt.logo}
         </div> */}
 
+        {/* up/down swapped for maskreveal reset */}
+
         <div 
-        key={activeMenu.asciiArt} // This forces re-render when asciiArt changes
+        key={activeMenu.asciiArt}
           className={`whitespace-pre text-xl leading-none font-mono ascii-art step-reveal ${activeMenu.asciiArt}`}
         >
           {asciiArt[activeMenu.asciiArt as keyof typeof asciiArt] || asciiArt.logo}
