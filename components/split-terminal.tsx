@@ -171,7 +171,7 @@ export function SplitTerminal() {
   };
 
   return (
-    <div className=" flex h-screen w-full overflow-hidden">
+      <div className=" flex h-screen w-full overflow-hidden">
       {/* Added background color for consistency */}
       {/* Left System Info Sidebar - 15% width (hidden on small screens) */}
       <SystemInfoSidebar />
@@ -199,9 +199,16 @@ export function SplitTerminal() {
             asciiArt.logo}
         </div> */}
 
-        <div className={`whitespace-pre text-xl leading-none font-mono ascii-art ${activeMenu.asciiArt}`}>
+        {/* <div className={`whitespace-pre text-xl leading-none font-mono ascii-art step-reveal ${activeMenu.asciiArt}`}>
           {asciiArt[activeMenu.asciiArt as keyof typeof asciiArt] ||
            asciiArt.logo}
+        </div> */}
+
+        <div 
+        key={activeMenu.asciiArt} // This forces re-render when asciiArt changes
+          className={`whitespace-pre text-xl leading-none font-mono ascii-art step-reveal ${activeMenu.asciiArt}`}
+        >
+          {asciiArt[activeMenu.asciiArt as keyof typeof asciiArt] || asciiArt.logo}
         </div>
 
         {/* Content Display */}
@@ -276,25 +283,25 @@ export function SplitTerminal() {
       >
         {/* Main Menu */}
         <div className="min-h-[200px] p-2 flex flex-row mb-10 w-full border-b-[2px] border-dashed border-[var(--main-accent-50)] bg-black/20 rounded-sm backdrop-blur-sm">
-          <div className="min-w-1/2 w-1/2 h-[200px] flex-col items-center">
+          <div className="min-w-1/2 w-1/2 h-[200px] flex flex-col items-start justify-around">
             {menuData.map((item, index) => (
               <div
                 key={item.id}
-                className={` flex mb-4 uppercase cursor-pointer transition-all duration-200 ${
+                className={` flex mb-4 uppercase cursor-pointer ${
                   activeMenuIndex === index
-                    ? "neon-red text-md drop-shadow-[0_0_3px_var(--main-accent)]"
-                    : "terminal-text-red text-sm hover:text-[var(--main-accent)]"
+                    ? "neon-red text-md drop-shadow-[0_0_13px_var(--main-accent)]"
+                    : "terminal-text-red hover:text-[var(--main-accent)]"
                 }`}
                 data-active={activeMenuIndex === index && !showSubMenu}
                 onClick={() => handleMenuItemClick(index)}
               >
                 <div className="font-mono flex items-center">
                   <span className={`mr-2 ${activeMenuIndex === index ? "text-[var(--main-accent)]" : "opacity-50"}`}>
-                    {activeMenuIndex === index ? "█" : "▒"}
+                    {activeMenuIndex === index ? "█████" : "▒▒▒▒▒"}
                   </span>
                   {item.title}
                 </div>
-                <div className="text-sm opacity-80">{item.subtitle}</div>
+                <div className="font-extrabold text-sm opacity-80">{item.subtitle}</div>
               </div>
             ))}
           </div>
@@ -322,7 +329,7 @@ export function SplitTerminal() {
                     <span className={`mx-1 inline-block ${activeSubMenuIndex === index ? "text-[var(--main-accent)]" : "opacity-50"}`}>
                       {activeSubMenuIndex === index ? "►" : "•"}
                     </span>
-                    <span className={`${activeSubMenuIndex === index ? "border-b text-sm border-[var(--main-accent)]" : ""}`}>
+                    <span className={`${activeSubMenuIndex === index ? "border-b font-bold border-[var(--main-accent)]" : ""}`}>
                       {subItem.title}
                     </span>
                   </div>

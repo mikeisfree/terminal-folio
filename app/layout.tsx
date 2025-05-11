@@ -17,13 +17,14 @@ export default function RootLayout({
     <html lang="en">
       <body>
 
-        <ThemeProvider className="pt-4">
-          <div className="glAnim gl3" />
-          <div className="glAnim gl4" />
-          <div className="glAnim gl5" />
-          {children}
+          <ThemeProvider className="pt-4">
+            <div className="glAnim gl3" />
+            <div className="glAnim gl4" />
+            <div className="glAnim gl5" />
+            {children}
 
-        </ThemeProvider>
+          </ThemeProvider>
+  
       </body>
     </html>
   )

@@ -237,12 +237,12 @@ export const menuData: MenuItem[] = [
       },
       {
         id: "trendsscraper",
-        title: "Google Trends Agent",
+        title: "Trends Scraper",
         contentComponent: "TrendsScraperProject",
       },
       {
         id: "ocr",
-        title: "OCR (Mistrall&Flask)",
+        title: "OCR",
         contentComponent: "OCRProject",
       },
       {

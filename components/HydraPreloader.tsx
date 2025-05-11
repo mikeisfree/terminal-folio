@@ -23,7 +23,7 @@ export default function HydraPreloader({ onComplete }: HydraPreloaderProps) {
 
   const drawLoadingBar = async () => {
     for (let i = 0; i < MAX_CHARACTERS; i++) {
-      await new Promise(resolve => setTimeout(resolve, Math.floor(Math.random() * 200) + 25));
+      await new Promise(resolve => setTimeout(resolve, Math.floor(Math.random() * 50) + 25));
       setBar(prev => {
         const updated = [...prev];
         updated[i] = LOADED_CHAR;

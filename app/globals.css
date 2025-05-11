@@ -488,9 +488,9 @@ background-size: 100%; */
 
 /*ASCII Art Specific Styles */
 
-.ascii-art {
+/* .ascii-art {
   transition: all 0.3s ease;
-}
+} */
 
 /* Logo style */
 .ascii-art.logo {
@@ -525,7 +525,7 @@ background-size: 100%; */
   color: #88ccff;
   text-shadow: 0 0 10px rgba(136, 204, 255, 0.5);
   font-size: 0.9rem;
-  animation: text-flicker 1s infinite, rocket-pulse 1s infinite, glitch 3s infinite;
+  animation: revealMask 2s steps(16) alternate-reverse forwards, text-flicker 1s infinite, rocket-pulse 1s infinite, glitch 3s infinite;
 }
 
 /* Neofetch style */
@@ -571,14 +571,14 @@ background-size: 100%; */
 .ascii-art.quantum {
   color: #8be9fd;
   text-shadow: 0 0 15px rgba(139, 233, 253, 0.6);
-  animation: quantum-pulse 4s infinite;
+  animation: revealMask 2s steps(16) alternate-reverse forwards, quantum-pulse 4s infinite;
 }
 
 /* Projects style */
 .ascii-art.projects {
   color: var(--main-text);
   text-shadow: 0 0 15px, var(--main-text);
-  animation: nova-pulse 3s infinite, snake-pulse 2s infinite;
+  animation: revealMask 2s steps(16) alternate-reverse forwards, nova-pulse 3s infinite, snake-pulse 2s infinite;
 }
 
 /* Nova style */
@@ -625,7 +625,7 @@ background-size: 100%; */
   text-shadow: 0 0 15px rgba(139, 233, 253, 0.6);
   font-size: 0.8rem;
   line-height: 1.1;
-  animation: quantum-pulse 2s infinite, success-pulse 2s infinite;
+  animation: revealMask 2s steps(8) alternate-reverse forwards, quantum-pulse 2s infinite, success-pulse 2s infinite;
 }
 
 /* Animation keyframes */
@@ -815,4 +815,31 @@ background-size: 100%; */
     left: 100%;
   }
 
+}
+
+.step-reveal {
+  opacity: 1;
+  /* animation: revealMask 2s steps(8) alternate-reverse forwards; */
+  -webkit-mask-image: linear-gradient(to right, black 50%, transparent 50%);
+  mask-image: linear-gradient(to right, black 50%, transparent 50%);
+  -webkit-mask-size: 100% 100%;
+  mask-size: 200% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: 0% 0%;
+  mask-position: 0% 0%;
+}
+
+@keyframes revealMask {
+  from {
+    -webkit-mask-position: 0% 0%;
+    mask-position: 0% 0%;
+
+  }
+
+  to {
+    -webkit-mask-position: 100% 0%;
+    mask-position: 100% 0%;
+
+  }
 }
