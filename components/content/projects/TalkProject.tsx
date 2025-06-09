@@ -116,7 +116,7 @@ export function TalkProject() {
   }, [activeSectionIndex, activeItemIndex]);
 
   return (
-    <div className="font-mono p-4" style={{ color: 'var(--main-text)' }}>
+    <div className=" p-4" style={{ color: 'var(--main-text)' }}>
       <div className="flex flex-col lg:flex-row gap-8">
         <div className="w-full lg:w-1/2 space-y-8">
           <div>

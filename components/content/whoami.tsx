@@ -7,7 +7,7 @@ export const WhoAmI: React.FC = () => {
   return (
    
     <div className={styles.cardContainer}>
-    <MagicCard>
+    {/* <MagicCard>
       <div className={styles.idCard}>
         <header className={styles.cardHeader}>
           <div className={styles.headerLeft}>
@@ -59,7 +59,7 @@ export const WhoAmI: React.FC = () => {
           PROPERTY OF WEB DEVELOPMENT DIVISION/PRAGUE UNIT
         </footer>
       </div>
-      </MagicCard>
+      </MagicCard> */}
     </div>
   );
 };

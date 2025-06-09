@@ -208,13 +208,13 @@ export function SplitTerminal() {
 
         <div 
         key={activeMenu.asciiArt}
-          className={`whitespace-pre text-xl leading-none font-mono ascii-art step-reveal ${activeMenu.asciiArt}`}
+          className={`whitespace-pre text-xl font-mono leading-none ascii-art step-reveal ${activeMenu.asciiArt}`}
         >
           {asciiArt[activeMenu.asciiArt as keyof typeof asciiArt] || asciiArt.logo}
         </div>
 
         {/* Content Display */}
-        <div className="mt-4 font-mono">
+        <div className="mt-4 ">
           <h2 className="text-green-100 mb-2">{activeMenu.title}</h2>
           <p className=" text-white mb-4">{activeMenu.subtitle}</p>
 
@@ -297,7 +297,7 @@ export function SplitTerminal() {
                 data-active={activeMenuIndex === index && !showSubMenu}
                 onClick={() => handleMenuItemClick(index)}
               >
-                <div className="font-mono flex items-center">
+                <div className=" flex items-center">
                   <span className={`mr-2 ${activeMenuIndex === index ? "text-[var(--main-accent)]" : "opacity-50"}`}>
                     {activeMenuIndex === index ? "█████" : "▒▒▒▒▒"}
                   </span>

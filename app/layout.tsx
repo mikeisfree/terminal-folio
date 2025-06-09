@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import { VT323 } from 'next/font/google';
 import { ThemeProvider } from '@/components/theme-provider'
 
 export const metadata: Metadata = {
@@ -8,13 +9,20 @@ export const metadata: Metadata = {
   generator: 'dev',
 }
 
+const vt323 = VT323({
+  subsets: ['latin'],
+  weight: '400',
+  variable: '--font-vt323',
+});
+
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={vt323.variable}>
       <body>
 
           <ThemeProvider className="pt-4">

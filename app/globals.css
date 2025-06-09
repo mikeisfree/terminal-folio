@@ -93,8 +93,12 @@
 
   body {
     overflow: hidden;
-    font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier, monospace;
+    font-family: VT323, monospace, SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier, monospace;
   }
+}
+
+html {
+  font-family: VT323, monospace, SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier, monospace;
 }
 
 /* Enhanced CRT and scanline effects */
